@@ -15,24 +15,46 @@ const rowElements = document.querySelectorAll(".row")
 // Call this function from WITHIN your row elements loop. Then you will, in turn,
 // need to loop over the resulting cell elements. But where should this whole
 // NESTED LOOP go? Think through the user's experience: when should WHAT happen? 
-function getCellElements (currentRowElement) {
+function getCellElements(currentRowElement) {
     return currentRowElement.querySelectorAll(".cell")
 }
 
 
 // YOUR CODE GOES HERE
 
+replaceAllButton.addEventListener("click", function () {
+    let oldWord = document.querySelector('.find-input').value
+    let newWord = document.querySelector('.replace-input').value
 
-// One last thing: dedicate very careful attention to using variables and
-// naming them accurately.
-// And when you change the value you are assigning to a variable, don't
-// forget to consider changing the name to reflect the change you made! It
-// is very easy to get confused when you are working inside NESTED LOOPS.
-// The best of us do. And unnecessary confusion during the process of 
-// developing your code means wasted time.
-//
-// The time-cost of structuring and naming things well is FAR less than the
-// time-cost of ignoring the quality and readability of your code.
-//
-// You can, of course, remove any comments in this starter project once
-// you have read them, if you prefer.
+})
+console.log()
+
+// const cellElements = document.querySelectorAll('.grid-cell')
+for (let index = 0; index < rowElements.length; index += 1) {
+    let oldElement = rowElements[index]
+    oldElement.addEventListener('click', function () {
+        console.log(oldElement.id)
+        oldElement.innerHTML = currentRowElement
+        if (currentRowElement === 1) {
+            findInput.push(word(oldElement.id))
+            console.log(findInput)
+        } else if (currentRowElement === 1) {
+            replaceInput.push(word(oldElement.id))
+        }
+
+    })
+}
+
+    // One last thing: dedicate very careful attention to using variables and
+    // naming them accurately.
+    // And when you change the value you are assigning to a variable, don't
+    // forget to consider changing the name to reflect the change you made! It
+    // is very easy to get confused when you are working inside NESTED LOOPS.
+    // The best of us do. And unnecessary confusion during the process of 
+    // developing your code means wasted time.
+    //
+    // The time-cost of structuring and naming things well is FAR less than the
+    // time-cost of ignoring the quality and readability of your code.
+    //
+    // You can, of course, remove any comments in this starter project once
+    // you have read them, if you prefer.
